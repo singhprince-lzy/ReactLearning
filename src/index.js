@@ -1,17 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+function Greeting(){
+  
+  return(
+    <div className='booklist' >
+      <Book/>
+      <Book/>
+      <Book/>
+      <Book/>
+      <Book/>
+      <Book/>
+      <Book/>
+      <Book/>
+      
+    </div>
+  );
+}
+const Book=()=>{
+  return(
+  <div className='book'>
+    <BookList/>
+    <Author/>
+    <Price/>
+  </div>
+  );
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const BookList = () =><img src='https://images-na.ssl-images-amazon.com/images/I/41EzNnr4YUL._AC_SX184_.jpg'/>
+const Author=()=><h1>Author Name</h1>
+const Price=()=><h4>$20</h4>
+
+ReactDOM.render(<Greeting/>,document.getElementById('root'));
